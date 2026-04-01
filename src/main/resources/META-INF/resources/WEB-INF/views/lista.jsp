@@ -9,11 +9,14 @@
     <title>OboeMarket — Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #0f1123; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0f1123; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
         .navbar { background-color: #16213e; border-bottom: 2px solid #c9a84c; }
         .navbar-brand { color: #c9a84c !important; font-weight: bold; letter-spacing: 1px; }
         
         .card { background-color: #16213e; border: 1px solid rgba(201,168,76,0.2); border-radius: 15px; }
+        
+        .text-muted { color: #bbbbbb !important; }
+        .form-label { color: #ffffff !important; font-weight: 600; }
         
         /* TABLA MODERNA */
         .table { color: #e0e0e0; border-collapse: separate; border-spacing: 0 8px; }
@@ -89,12 +92,11 @@
 
 <div class="container-fluid px-4">
 
-    <c:if test="${not empty sessionScope.mensaje}">
+    <c:if test="${not empty mensaje}">
         <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm" style="background-color: #2ecc71; color: white;">
-            <c:out value="${sessionScope.mensaje}"/>
+            <c:out value="${mensaje}"/>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
         </div>
-        <c:remove var="mensaje" scope="session"/>
     </c:if>
 
     <div class="row mb-4 align-items-center">

@@ -160,7 +160,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Descripción Detallada</label>
-                        <textarea name="descripcion_larga" class="form-control" rows="5" 
+                        <textarea name="descripcionLarga" class="form-control" rows="5" 
                                   placeholder="Especificaciones técnicas, historia, que incluye..."><c:out value="${producto.descripcionLarga}"/></textarea>
                     </div>
 

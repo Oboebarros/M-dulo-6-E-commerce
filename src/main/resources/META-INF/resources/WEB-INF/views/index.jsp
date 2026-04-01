@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -70,8 +72,20 @@
             Entrar a la Tienda
         </a>
         <div class="links">
-            <a href="${pageContext.request.contextPath}/carrito">🛒 Carrito</a>
-            <a href="${pageContext.request.contextPath}/admin/products">⚙️ Administración</a>
+            <sec:authorize access="isAnonymous()">
+                <a href="${pageContext.request.contextPath}/login">🔑 Iniciar Sesión</a>
+                <a href="${pageContext.request.contextPath}/register">📝 Registrarse</a>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+                <a href="${pageContext.request.contextPath}/catalogo">🎷 Catálogo</a>
+                <a href="${pageContext.request.contextPath}/carrito">🛒 Carrito</a>
+                <sec:authorize access="hasRole('ADMIN')">
+                    <a href="${pageContext.request.contextPath}/admin/products">⚙️ Administración</a>
+                </sec:authorize>
+                <form action="${pageContext.request.contextPath}/logout" method="post" style="display:inline;">
+                    <button type="submit" style="background:none; border:none; color:#aaa; font-size:0.9rem; padding:0; cursor:pointer;">🚪 Cerrar Sesión</button>
+                </form>
+            </sec:authorize>
         </div>
     </div>
 </div>

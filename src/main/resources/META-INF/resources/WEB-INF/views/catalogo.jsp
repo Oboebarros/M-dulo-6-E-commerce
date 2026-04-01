@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -135,9 +136,20 @@
                     </a>
                 </li>
                 <li class="nav-item mt-2 px-3">
-                    <a href="${pageContext.request.contextPath}/admin/products" class="btn btn-outline-secondary w-100 btn-sm py-2">
-                        ⚙️ Admin
-                    </a>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <a href="${pageContext.request.contextPath}/admin/products" class="btn btn-outline-secondary w-100 btn-sm py-2">
+                            ⚙️ Admin
+                        </a>
+                    </sec:authorize>
+                </li>
+                <li class="nav-item mt-4 px-3 border-top pt-3">
+                    <div class="small text-muted mb-2">Conectado como:</div>
+                    <div class="text-white small mb-3">
+                        <sec:authentication property="principal.username" />
+                    </div>
+                    <form action="${pageContext.request.contextPath}/logout" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-danger w-100 py-1">Cerrar Sesión</button>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -173,7 +185,7 @@
                         <div class="product-card">
                             <div class="img-container">
                                 <a href="catalogo?accion=detalle&id=${p.id}">
-                                    <img src="${p.imagenUrl}" alt="${p.nombre}" loading="lazy">
+                                    <img src="${pageContext.request.contextPath}/${p.imagenUrl}" alt="${p.nombre}" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body">
