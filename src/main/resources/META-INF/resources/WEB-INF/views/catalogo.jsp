@@ -86,7 +86,8 @@
             backdrop-filter: blur(10px);
         }
         .toast-agregado .toast-body { padding: 25px; font-size: 1.1rem; }
-        .toast-agregado .btn-view-cart { color: #c9a84c; text-decoration: none; font-weight: bold; border-left: 1px solid rgba(201,168,76,0.2); padding-left: 15px; margin-left: 15px; }
+        .toast-agregado .btn-view-cart { color: #c9a84c; text-decoration: none; font-weight: bold; border-left: 1px solid rgba(201,168,76,0.2); padding-left: 15px; margin-left: 15px; transition: 0.3s; }
+        .toast-agregado .btn-view-cart:hover { color: #fff; }
 
         /* FOOTER */
         footer {
@@ -98,7 +99,7 @@
         }
         footer h5 { color: #c9a84c; font-weight: bold; margin-bottom: 1.5rem; }
         footer a { color: #aaa; text-decoration: none; transition: 0.3s; }
-        footer a:hover { color: #c9a84c; }
+        footer a:hover { color: #c9a84c; text-decoration: underline; }
         .contact-info i { color: #c9a84c; margin-right: 10px; }
 
         /* MOBILE OVERRIDES */
@@ -220,31 +221,26 @@
 
 <footer>
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 text-center text-md-start">
             <div class="col-md-4">
                 <h5>OboeMarket</h5>
                 <p>Tu tienda premium especializada en oboes, cañas y herramientas para el músico profesional y en formación.</p>
                 <div class="mt-3">
-                    <a href="#" class="me-3">Facebook</a>
-                    <a href="#" class="me-3">Instagram</a>
-                    <a href="#">YouTube</a>
+                    <a href="https://youtu.be/atySC-99OYo" target="_blank" class="me-3">🎵 YouTube: Purcell</a>
                 </div>
             </div>
             <div class="col-md-4 contact-info">
-                <h5>Contacto</h5>
-                <p>📍 Av. Principal 123, Ciudad de la Música</p>
-                <p>📞 +56 9 1234 5678</p>
-                <p>📧 contacto@oboemarket.cl</p>
-                <p>🕒 Lun - Vie: 9:00 - 18:30</p>
-            </div>
-            <div class="col-md-4">
                 <h5>Atención al Cliente</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Envíos y Devoluciones</a></li>
-                    <li><a href="#">Garantía de Instrumentos</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq">Preguntas Frecuentes</a></li>
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq">Términos y Condiciones</a></li>
                 </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacto</h5>
+                <p>📍 Av. Principal 123, Ciudad de la Música, Chile</p>
+                <p>📧 contacto@oboemarket.cl</p>
+                <p>📞 +56 9 1234 5678</p>
             </div>
         </div>
         <hr class="my-4 border-secondary opacity-25">

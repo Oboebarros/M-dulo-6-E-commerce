@@ -23,16 +23,10 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                // Permitir forwards internos de JSP y errores
+                // Configuración de acceso público y roles
                 .dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.ERROR).permitAll()
-                
-                // Rutas públicas explícitas
                 .requestMatchers("/", "/index.jsp", "/login", "/register", "/CSS/**", "/assets/**", "/favicon.ico").permitAll()
-                
-                // Rutas de administración
                 .requestMatchers("/admin/**").hasRole("ADMIN")
-                
-                // Todo lo demás requiere login
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form

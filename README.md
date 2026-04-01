@@ -1,22 +1,34 @@
-# OboeMarket - Módulo 6
+# OboeMarket - Módulo 6 & Portafolio Profesional
 
-Proyecto de E-commerce migrado a **Spring Boot**.
+Proyecto de E-commerce especializado en Oboes y accesorios, migrado a **Spring Boot 3.2.4**. Este repositorio contiene la versión final optimizada para el Portafolio Profesional.
 
-## Funcionalidades
-- **Registro y Login**: Los usuarios pueden registrarse (rol CLIENT por defecto).
-- **Seguridad**:
-  - Si entras como **ADMIN**, vas directo a la gestión de productos.
-  - Si entras como **CLIENT**, vas al catálogo.
-- **Roles**:
-  - `ADMIN`: Puede crear, editar y eliminar productos en `/admin/products`.
-  - `CLIENT`: Puede ver el catálogo y detalles.
-- **Base de Datos**: Usa **Spring Data JPA** para conectar con MySQL.
+## 🚀 Tecnologías Utilizadas
+- **Java 21**
+- **Spring Boot 3.2.4**
+- **Spring Security** (Autenticación y Roles RBAC)
+- **Spring Data JPA** (Persistencia con MySQL)
+- **JSP & JSTL** (Vistas dinámicas)
+- **Bootstrap 5.3** (Diseño Responsivo)
+- **Maven** (Gestión de dependencias)
 
-## Configuración
-1. Configura tu base de datos en `application.properties`.
-2. Ejecuta la aplicación desde `OboeMarketApplication.java`.
-3. Accede en: `http://localhost:8080/`
+## 🛠️ Configuración y Ejecución
+1.  **Base de Datos**: Crea una base de datos en MySQL llamada `oboemarket_db`.
+2.  **Propiedades**: Configura tu usuario y contraseña de MySQL en `src/main/resources/application.properties`.
+3.  **Ejecución**:
+    ```powershell
+    mvn spring-boot:run
+    ```
+4.  **Acceso**: Abre [http://localhost:8080](http://localhost:8080) en tu navegador.
 
-## Usuarios de Prueba
+## 🔐 Usuarios de Prueba
+El sistema cuenta con inicialización automática de datos (`DataInitializer`):
 - **Administrador**: `admin@oboemarket.cl` / `admin123`
-- **GitHub**: https://github.com/Oboebarros/M-dulo-6-E-commerce.git
+- **Cliente**: Puedes registrar uno nuevo en la página de registro.
+
+## 📁 Estructura del Proyecto
+- `src/main/java`: Lógica de negocio, controladores, servicios y modelos.
+- `src/main/resources`: Configuración y recursos estáticos.
+- `src/main/resources/META-INF/resources`: Ubicación de archivos JSP y assets (estándar para Tomcat embebido).
+
+## 📄 Documentación Adicional
+Para más detalles sobre los errores corregidos y la evolución del proyecto, consulta el [INFORME_FINAL.md](./INFORME_FINAL.md).

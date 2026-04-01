@@ -8,6 +8,11 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return "index"; // Esto buscará /WEB-INF/views/index.jsp
+        return "index";
+    }
+
+    @GetMapping("/faq")
+    public String faq() {
+        return "faq";
     }
 }

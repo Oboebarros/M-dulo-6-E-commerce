@@ -33,7 +33,10 @@ public class CarritoController {
                              Model model) {
         
         switch (accion != null ? accion : "") {
-            case "agregar" -> agregar(productoId, cantidad, session);
+            case "agregar" -> {
+                agregar(productoId, cantidad, session);
+                return "redirect:/catalogo?msg=agregado";
+            }
             case "eliminar" -> eliminar(productoId, session);
             case "vaciar" -> session.removeAttribute("carrito");
             case "finalizar" -> {

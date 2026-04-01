@@ -179,21 +179,27 @@
 </div>
 
 <footer>
-    <div class="container">
+    <div class="container text-center text-md-start">
         <div class="row g-4">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h5>OboeMarket</h5>
                 <p>Especialistas en oboes y accesorios de alta gama. Envíos a todo Chile y el mundo.</p>
-                <p>📍 Av. Principal 123, Ciudad de la Música</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <h5>Contacto Directo</h5>
-                <p>📞 +56 9 1234 5678</p>
-                <p>📧 contacto@oboemarket.cl</p>
-                <div class="mt-2">
-                    <a href="#" class="me-3">Facebook</a>
-                    <a href="#" class="me-3">Instagram</a>
+                <div class="mt-3">
+                    <a href="https://youtu.be/atySC-99OYo" target="_blank" class="text-decoration-none">🎥 YouTube: Purcell</a>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Atención al Cliente</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq" class="text-decoration-none text-muted">Preguntas Frecuentes</a></li>
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq" class="text-decoration-none text-muted">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacto Directo</h5>
+                <p>📍 Av. Principal 123, Ciudad de la Música, Chile</p>
+                <p>📧 contacto@oboemarket.cl</p>
+                <p>📞 +56 9 1234 5678</p>
             </div>
         </div>
         <hr class="my-4 opacity-25">

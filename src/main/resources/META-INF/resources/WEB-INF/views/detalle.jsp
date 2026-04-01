@@ -200,32 +200,26 @@
 </div>
 
 <footer>
-    <div class="container">
+    <div class="container text-center text-md-start">
         <div class="row g-4">
             <div class="col-md-4">
                 <h5>OboeMarket</h5>
                 <p>Tu tienda premium especializada en oboes, cañas y herramientas para el músico profesional y en formación.</p>
                 <div class="mt-3">
-                    <a href="#" class="me-3 text-decoration-none">Facebook</a>
-                    <a href="#" class="me-3 text-decoration-none">Instagram</a>
-                    <a href="#" class="text-decoration-none">YouTube</a>
+                    <a href="https://youtu.be/atySC-99OYo" target="_blank" class="text-decoration-none">🎥 YouTube: Purcell</a>
                 </div>
-            </div>
-            <div class="col-md-4 contact-info">
-                <h5>Contacto</h5>
-                <p>📍 Caupolican 889, Ciudad de la Música</p>
-                <p>📞 +56 9 1234 5678</p>
-                <p>📧 contacto@oboemarket.cl</p>
-                <p>🕒 Lun - Vie: 9:00 - 18:30</p>
             </div>
             <div class="col-md-4">
                 <h5>Atención al Cliente</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none text-muted">Preguntas Frecuentes</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Envíos y Devoluciones</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Garantía de Instrumentos</a></li>
-                    <li><a href="#" class="text-decoration-none text-muted">Términos y Condiciones</a></li>
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq" class="text-decoration-none text-muted">Preguntas Frecuentes</a></li>
+                    <li class="mb-2"><a href="${pageContext.request.contextPath}/faq" class="text-decoration-none text-muted">Términos y Condiciones</a></li>
                 </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacto</h5>
+                <p>📍 Ciudad de la Música, Chile</p>
+                <p>📧 contacto@oboemarket.cl</p>
             </div>
         </div>
         <hr class="my-4 border-secondary opacity-25">

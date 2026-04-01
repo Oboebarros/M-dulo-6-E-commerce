@@ -33,24 +33,15 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        // 0. Limpieza automática (Comentada después de la carga inicial exitosa)
-        /*
-        entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0").executeUpdate();
-        entityManager.createNativeQuery("TRUNCATE TABLE order_items").executeUpdate();
-        entityManager.createNativeQuery("TRUNCATE TABLE orders").executeUpdate();
-        entityManager.createNativeQuery("TRUNCATE TABLE productos").executeUpdate();
-        entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1").executeUpdate();
-        */
-
-        // 1. Inicializar Usuario Admin
+        // Inicializo los datos básicos del sistema para asegurar su funcionamiento inmediato.
+        
         String adminEmail = "admin@oboemarket.cl";
         
         if (userRepository.findByEmail(adminEmail).isEmpty()) {
             User admin = new User();
             admin.setNombre("Administrador");
-            admin.setApellido("Sistema"); // Añadimos el apellido para evitar el error de validación
+            admin.setApellido("Sistema"); 
             admin.setEmail(adminEmail);
-            // Encriptamos la contraseña "admin123" para que Spring Security la acepte
             admin.setPassword(passwordEncoder.encode("admin123"));
             admin.setRol("ADMIN");
             
@@ -58,7 +49,7 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println(">>> Usuario administrador creado exitosamente: " + adminEmail);
         }
 
-        // 2. Inicializar Productos si la tabla está vacía
+        // Carga inicial del catálogo de productos si no existen datos previos.
         if (productoRepository.count() == 0) {
             productoRepository.saveAll(List.of(
                 new Producto(0, "Oboe Buffet Légende", 
