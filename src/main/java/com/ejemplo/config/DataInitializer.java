@@ -33,12 +33,14 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        // 0. Limpieza automática (Activada para cargar datos frescos con descripciones largas)
+        // 0. Limpieza automática (Comentada después de la carga inicial exitosa)
+        /*
         entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 0").executeUpdate();
         entityManager.createNativeQuery("TRUNCATE TABLE order_items").executeUpdate();
         entityManager.createNativeQuery("TRUNCATE TABLE orders").executeUpdate();
         entityManager.createNativeQuery("TRUNCATE TABLE productos").executeUpdate();
         entityManager.createNativeQuery("SET FOREIGN_KEY_CHECKS = 1").executeUpdate();
+        */
 
         // 1. Inicializar Usuario Admin
         String adminEmail = "admin@oboemarket.cl";
