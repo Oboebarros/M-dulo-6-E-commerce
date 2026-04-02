@@ -1,34 +1,31 @@
-# OboeMarket - Módulo 6 & Portafolio Profesional
+# OboeMarket – E-commerce para Músicos (Versión Final M7)
 
-Proyecto de E-commerce especializado en Oboes y accesorios, migrado a **Spring Boot 3.2.4**. Este repositorio contiene la versión final optimizada para el Portafolio Profesional.
+Este proyecto es la entrega final de la plataforma OboeMarket, un sistema de E-commerce diseñado para la gestión y venta de instrumentos y accesorios musicales, desarrollado con Spring Boot 3.2.4 y MySQL.
 
-## 🚀 Tecnologías Utilizadas
-- **Java 21**
-- **Spring Boot 3.2.4**
-- **Spring Security** (Autenticación y Roles RBAC)
-- **Spring Data JPA** (Persistencia con MySQL)
-- **JSP & JSTL** (Vistas dinámicas)
-- **Bootstrap 5.3** (Diseño Responsivo)
-- **Maven** (Gestión de dependencias)
+## 📂 Enlace al Repositorio
+* **GitHub:** [https://github.com/Oboebarros/M-dulo-6-E-commerce](https://github.com/Oboebarros/M-dulo-6-E-commerce)
 
-## 🛠️ Configuración y Ejecución
-1.  **Base de Datos**: Crea una base de datos en MySQL llamada `oboemarket_db`.
-2.  **Propiedades**: Configura tu usuario y contraseña de MySQL en `src/main/resources/application.properties`.
-3.  **Ejecución**:
-    ```powershell
-    mvn spring-boot:run
-    ```
-4.  **Acceso**: Abre [http://localhost:8080](http://localhost:8080) en tu navegador.
+## 🛠️ Stack Tecnológico
+* **Lenguaje:** Java 21
+* **Framework Principal:** Spring Boot 3.2.4
+* **Seguridad:** Spring Security (BCrypt)
+* **Persistencia:** Spring Data JPA / Hibernate
+* **Base de Datos:** MySQL
+* **Motor de Plantillas:** Thymeleaf
+* **Gestión de Dependencias:** Maven
 
-## 🔐 Usuarios de Prueba
-El sistema cuenta con inicialización automática de datos (`DataInitializer`):
-- **Administrador**: `admin@oboemarket.cl` / `admin123`
-- **Cliente**: Puedes registrar uno nuevo en la página de registro.
+## 🚀 Funcionalidades Principales
+* **Autenticación y Roles (RBAC):** Diferencia accesos entre Administradores y Clientes.
+* **Gestión de Productos (CRUD):** Panel administrativo para control de stock.
+* **Carrito de Compras:** Sistema funcional con cálculo automático de totales.
 
-## 📁 Estructura del Proyecto
-- `src/main/java`: Lógica de negocio, controladores, servicios y modelos.
-- `src/main/resources`: Configuración y recursos estáticos.
-- `src/main/resources/META-INF/resources`: Ubicación de archivos JSP y assets (estándar para Tomcat embebido).
+## ⚙️ Instrucciones de Ejecución Local
 
-## 📄 Documentación Adicional
-Para más detalles sobre los errores corregidos y la evolución del proyecto, consulta el [INFORME_FINAL.md](./INFORME_FINAL.md).
+1. **Requisitos:** Java 21, Maven y MySQL Server instalados.
+2. **Base de Datos:** - Crea una base de datos vacía llamada `oboemarket_db`.
+    - Importa el archivo `schema.sql` (incluido en la raíz del proyecto) para cargar la estructura y datos iniciales.
+3. **Variables y Configuración:** Ajusta tus credenciales locales en `src/main/resources/application.properties`:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/oboemarket_db
+   spring.datasource.username=tu_usuario
+   spring.datasource.password=tu_contraseña
